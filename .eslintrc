@@ -34,7 +34,8 @@
         "react/jsx-props-no-spreading": "off",
         "react/jsx-no-constructed-context-values": "off",
         "jsx-a11y/label-has-associated-control": "off",
-        "linebreak-style": ["error", "windows"]
+        "linebreak-style": ["error", "windows"],
+        "trailing-comma": "off"
       }
     }
   ]

@@ -3,6 +3,11 @@
    License: none (public domain)
 */
 
+button {
+  border: none;
+  background-color: transparent;
+}
+
 html,
 body,
 div,
@@ -83,6 +88,7 @@ summary,
 time,
 mark,
 audio,
+button,
 video {
   margin: 0;
   padding: 0;
@@ -120,7 +126,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {

@@ -1,0 +1,96 @@
+@use '../../styles/responsive';
+@use '../../styles/colors';
+@use '../../styles/transitions';
+@use '../../styles/shadows';
+
+.guide {
+  border-top: 1px solid colors.$line;
+  position: relative;
+
+  .contents {
+  }
+
+  .arbo {
+    width: 3rem;
+    padding-top: 0.5rem;
+    gap: 1rem;
+    background-color: colors.$dark;
+    border-left: 1px solid colors.$line;
+    transition: transitions.$quick-transition;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &.arbo-expanded {
+      align-items: start;
+      padding-left: 0.5rem;
+      width: 15rem;
+
+      .arbo-content {
+        opacity: 1;
+        visibility: visible;
+
+        .arbo-content-item {
+          word-wrap: break-word;
+          white-space: nowrap;
+        }
+
+        .arbo-content-item-subs-item {
+          word-wrap: unset;
+          white-space: unset;
+        }
+      }
+    }
+
+    .arbo-content {
+      opacity: 0;
+      visibility: hidden;
+      transition: transitions.$quick-transition;
+      width: 100%;
+
+      .arbo-content-item {
+        width: calc(100% - 0.5rem);
+        padding: 0.5rem;
+        font-size: 1rem;
+        transition: transitions.$quick-transition;
+        word-wrap: break-word;
+        white-space: nowrap;
+
+        &--activate {
+          color: colors.$accent;
+          text-shadow: shadows.glow(colors.$accent);
+        }
+
+        & span {
+          font-size: 1rem;
+          text-align: left;
+          line-height: 1rem;
+        }
+      }
+
+      .arbo-content-item-subs {
+        margin-left: 1rem;
+
+        .arbo-content-item-subs-item {
+          width: calc(100% - 0.5rem);
+          padding: 0.5rem;
+          transition: transitions.$quick-transition;
+          font-size: 0.8rem;
+          text-align: left;
+          line-height: 1rem;
+          color: rgba(colors.$white, 0.8);
+          word-wrap: break-word;
+          white-space: nowrap;
+
+          &--activate {
+            color: colors.$accent !important;
+            text-shadow: shadows.glow(colors.$accent);
+          }
+        }
+      }
+    }
+
+    @include responsive.desktop {
+    }
+  }
+}

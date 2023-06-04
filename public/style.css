@@ -1,0 +1,10 @@
+body,
+button {
+  font-family: 'Monda', sans-serif;
+}
+
+body,
+#root {
+  min-width: 300px;
+  height: 100vh;
+}

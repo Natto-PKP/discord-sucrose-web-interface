@@ -1,0 +1,17 @@
+{
+  "list": [
+    {
+      "label": "Getting started",
+      "file": "getting-started.md",
+      "subs": [
+        { "label": "Getting started A", "file": "getting-started.md" },
+        { "label": "Getting started B", "file": "getting-started.md" },
+        { "label": "Getting started C", "file": "getting-started.md" },
+        { "label": "Getting started D", "file": "getting-started.md" },
+        { "label": "Getting started E", "file": "getting-started.md" },
+        { "label": "Getting started F", "file": "getting-started.md" },
+        { "label": "Getting started G", "file": "getting-started.md" }
+      ]
+    }
+  ]
+}

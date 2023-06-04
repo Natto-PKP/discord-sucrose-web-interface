@@ -1,0 +1,32 @@
+@use '../styles/colors';
+@use '../styles/responsive';
+@use '../styles/values';
+
+.body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include responsive.desktop {
+    flex-direction: row;
+  }
+
+  @include responsive.tablet {
+    flex-direction: row;
+  }
+}
+
+.main {
+  background-color: colors.$dark;
+  color: colors.$white;
+  display: flex;
+  flex-direction: column;
+
+  @include responsive.desktop {
+    width: 100%;
+  }
+
+  @include responsive.tablet {
+    width: 100%;
+  }
+}

@@ -1,0 +1,3 @@
+@function glow($color) {
+  @return 0 0 4px $color;
+}

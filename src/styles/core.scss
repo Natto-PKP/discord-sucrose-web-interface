@@ -1,0 +1,315 @@
+@use './colors';
+@use './responsive';
+@use './values';
+@use './shadows';
+@use './transitions';
+@use './scrollbars';
+
+.icon-button {
+  border: transparent;
+  background-color: transparent;
+  color: colors.$white;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  transition: transitions.$quick-transition;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: colors.$white-hover-background;
+  }
+}
+
+.flex {
+  &-wrap {
+    flex-wrap: wrap;
+
+    &--reverse {
+      flex-wrap: wrap-reverse;
+    }
+  }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+
+    &--align {
+      justify-content: center;
+    }
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+
+    &--align {
+      align-items: center;
+    }
+  }
+
+  &--gap {
+    gap: values.$mobile-gap;
+
+    @include responsive.desktop {
+      gap: values.$desktop-gap;
+    }
+
+    @include responsive.tablet {
+      gap: values.$desktop-gap;
+    }
+  }
+
+  &--lite-gap {
+    gap: values.$mobile-lite-gap;
+
+    @include responsive.desktop {
+      gap: values.$desktop-lite-gap;
+    }
+
+    @include responsive.tablet {
+      gap: values.$desktop-lite-gap;
+    }
+  }
+}
+
+.container {
+  border: 1px solid transparent;
+
+  &--info {
+    border-color: rgba(colors.$info, 1);
+    background-color: rgba(colors.$info, 0.05);
+    box-shadow: shadows.glow(colors.$info);
+
+    &.container--hover {
+      transition: transitions.$quick-transition;
+
+      &:hover {
+        background-color: rgba(colors.$info, 0.1);
+      }
+    }
+  }
+
+  &--warn {
+    border-color: rgba(colors.$warn, 1);
+    background-color: rgba(colors.$warn, 0.05);
+    box-shadow: shadows.glow(colors.$warn);
+  }
+
+  &--success {
+    border-color: rgba(colors.$success, 1);
+    background-color: rgba(colors.$success, 0.05);
+    box-shadow: shadows.glow(colors.$success);
+  }
+
+  &--round {
+    border-radius: 4px;
+  }
+
+  &--padding {
+    padding: values.$mobile-main-padding;
+
+    @include responsive.desktop {
+      padding: values.$desktop-main-padding;
+    }
+
+    @include responsive.tablet {
+      padding: values.$desktop-main-padding;
+    }
+  }
+
+  &--lite-padding {
+    padding: values.$mobile-lite-padding;
+
+    @include responsive.desktop {
+      padding: values.$desktop-lite-padding;
+    }
+
+    @include responsive.tablet {
+      padding: values.$desktop-lite-padding;
+    }
+  }
+
+  &--micro-padding {
+    padding: values.$mobile-micro-padding;
+
+    @include responsive.desktop {
+      padding: values.$desktop-micro-padding;
+    }
+
+    @include responsive.tablet {
+      padding: values.$desktop-micro-padding;
+    }
+  }
+
+  &--clickable {
+    cursor: pointer;
+  }
+
+  &--hover {
+    transition: transitions.$quick-transition;
+
+    &:hover {
+      background-color: colors.$white-hover-background;
+    }
+  }
+}
+
+.fill-space {
+  flex-grow: 1;
+
+  &--1 {
+    flex-grow: 1;
+  }
+
+  &--2 {
+    flex-grow: 2;
+  }
+
+  &--3 {
+    flex-grow: 3;
+  }
+}
+
+.separator {
+  width: 1px;
+  height: 100%;
+  background-color: colors.$line;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: colors.$line;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+
+  &-header {
+    border-bottom: 1px solid colors.$line;
+  }
+}
+
+.label {
+  font-size: 1.2rem;
+}
+
+.text {
+  letter-spacing: 0.05rem;
+}
+
+.white-text {
+  color: colors.$white;
+}
+
+.details {
+  font-size: 0.8rem;
+}
+
+.tag {
+  padding: 0.2rem 0.3rem;
+  padding-top: 0.25rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(colors.$white, 0.85);
+
+  &--red {
+    background-color: rgba(colors.$red-tag, 0.2);
+    border: 1px solid colors.$red-tag;
+  }
+
+  &--yellow {
+    background-color: rgba(colors.$yellow-tag, 0.2);
+    border: 1px solid colors.$yellow-tag;
+  }
+
+  &--red {
+    background-color: rgba(colors.$red-tag, 0.2);
+    border: 1px solid colors.$red-tag;
+  }
+
+  &--yellow {
+    background-color: rgba(colors.$yellow-tag, 0.2);
+    border: 1px solid colors.$yellow-tag;
+  }
+
+  &--green {
+    background-color: rgba(colors.$green-tag, 0.2);
+    border: 1px solid colors.$green-tag;
+  }
+
+  &--purple {
+    background-color: rgba(colors.$purple-tag, 0.2);
+    border: 1px solid colors.$purple-tag;
+  }
+
+  &--orange {
+    background-color: rgba(colors.$orange-tag, 0.2);
+    border: 1px solid colors.$orange-tag;
+  }
+
+  &--blue {
+    background-color: rgba(colors.$blue-tag, 0.2);
+    border: 1px solid colors.$blue-tag;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: rgba(colors.$white, 0.8);
+  transition: transitions.$quick-transition;
+
+  &:hover {
+    color: colors.$white;
+  }
+
+  &--accent {
+    color: colors.$accent;
+
+    &:hover {
+      text-shadow: shadows.glow(colors.$accent);
+    }
+  }
+}
+
+.overflow {
+  overflow: scroll;
+
+  &--x {
+    overflow-x: scroll;
+    overflow-y: unset;
+  }
+
+  &--y {
+    overflow-y: scroll;
+    overflow-x: unset;
+  }
+
+  &--scrollbar {
+    @include scrollbars.accent-scrollbar;
+
+    &--tiny {
+      @include scrollbars.accent-tiny-scrollbar;
+    }
+  }
+}
+
+.markdown {
+  overflow-y: scroll;
+
+  .h1 {
+  }
+}
